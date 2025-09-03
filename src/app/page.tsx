@@ -225,10 +225,10 @@ export default function Home() {
                   )}
 
                   {transformedImageUrl && (
-                    <Image
-                    width={500}
-                    height={500}
-                    quality={100}
+                    <img
+                    // width={500}
+                    // height={500}
+                    // quality={100}
                       src={transformedImageUrl}
                       alt="Transformed"
                       onLoad={() => setImageLoading(false)}
