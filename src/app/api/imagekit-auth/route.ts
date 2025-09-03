@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 import { getUploadAuthParams } from "@imagekit/next/server";
 
 export async function GET() {

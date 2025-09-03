@@ -5,6 +5,7 @@ import { Upload, X, ImageIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { buildTransformationUrl } from "@/config/imagekit";
+import Image from "next/image";
 
 interface DragDropImageProps {
   onImageSelect?: (fileUrl: string) => void;
@@ -130,7 +131,10 @@ export function DragDropImage({
       >
         {uploadedImageUrl ? (
           <div className="relative">
-            <img
+            <Image
+            width={500}
+            height={500}
+            quality={100}
               src={uploadedImageUrl}
               alt="Uploaded"
               className="w-full h-48 object-cover rounded-md"

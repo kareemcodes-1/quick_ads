@@ -1,6 +1,4 @@
 "use client";
-
-import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { DragDropImage } from "./components/drag-drop-image";
@@ -9,6 +7,7 @@ import {
   buildTransformationUrl,
 } from "@/config/imagekit";
 import { Eraser, Crop, User, Search, Sparkle, Star, Check } from "lucide-react";
+import Image from "next/image";
 
 const iconMap: Record<string, React.ElementType> = {
   eraser: Eraser,
@@ -141,7 +140,10 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="border rounded-lg p-6 text-center">
               <h3 className="font-semibold text-xl mb-4">Uploaded Image</h3>
-              <img
+              <Image
+              width={500}
+              height={500}
+              quality={100}
                 src={uploadedImageUrl}
                 alt="Uploaded"
                 className="mx-auto max-w-full max-h-96 object-contain rounded-lg"
@@ -196,9 +198,12 @@ export default function Home() {
               <div className="border rounded-lg p-6 text-center">
                 <h3 className="font-semibold text-xl mb-4">Original Image</h3>
                 <div className=" rounded-lg p-4 h-96 flex items-center justify-center">
-                  <img
+                  <Image
                     src={uploadedImageUrl!}
                     alt="Original"
+                    width={500}
+                    height={500}
+                    quality={100}
                     className="max-w-full max-h-full object-contain rounded-lg"
                   />
                 </div>
@@ -220,7 +225,10 @@ export default function Home() {
                   )}
 
                   {transformedImageUrl && (
-                    <img
+                    <Image
+                    width={500}
+                    height={500}
+                    quality={100}
                       src={transformedImageUrl}
                       alt="Transformed"
                       onLoad={() => setImageLoading(false)}

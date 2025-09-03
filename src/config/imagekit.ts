@@ -1,6 +1,6 @@
 export const imagekitConfig = {
   urlEndpoint: "https://ik.imagekit.io/jl7pziosr",
-  publicKey: "public_+g5I0Rw0jXcUielE4l8bkF4pyfc="
+  publicKey: process.env.IMAGEKIT_PUBLIC_KEY
   // Note: Private key should be used server-side only
 };
 
