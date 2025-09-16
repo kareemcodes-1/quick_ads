@@ -11,6 +11,8 @@ import Link from "next/link";
 function AuthButton() {
   const { data: session } = useSession();
 
+  
+
   return session ? (
     <Button
       onClick={() => (window.location.href = "/dashboard")}
