@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState} from "react";
 import { DragDropImage } from "@/components/drag-drop-image";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";

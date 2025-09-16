@@ -2,11 +2,8 @@
 
 import * as React from "react";
 import {
-  IconDashboard,
-  IconMailbox,
   IconFolder,
   IconHelp,
-  IconInnerShadowTop,
   IconImageInPicture,
   IconMoneybag,
   IconVideo,

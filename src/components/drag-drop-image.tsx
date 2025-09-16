@@ -80,7 +80,7 @@ export function DragDropImage({
       setError(null);
       uploadToImageKit(file);
     },
-    [transformations]
+    [transformations, uploadToImageKit, validateFile]
   );
 
   const handleDragOver = useCallback((e: React.DragEvent) => {

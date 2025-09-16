@@ -1,6 +1,5 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardFooter,
@@ -32,8 +31,8 @@ export function SectionCards({ url }: { url: string }) {
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState<AdItem[]>([]);
   const [deleteAdId, setDeleteAdId] = useState<string | null>(null);
-  const [adId, setAdId] = useState<string | null>(null);
-  const [openEmbed, setOpenEmbed] = useState<boolean>(false);
+  // const [adId, setAdId] = useState<string | null>(null);
+  // const [openEmbed, setOpenEmbed] = useState<boolean>(false);
   const [videoStates, setVideoStates] = useState<
     Record<string, "idle" | "generating" | "ready">
   >({});

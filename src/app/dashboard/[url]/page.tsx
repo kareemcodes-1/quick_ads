@@ -6,8 +6,8 @@ import { AdItem } from "../../../../types/index";
 import { useParams } from "next/navigation";
 
 export default function Page() {
-  const [ads, setAds] = useState<AdItem[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [, setAds] = useState<AdItem[]>([]);
+  const [, setLoading] = useState(false);
   const { url } = useParams(); // workspace URL/id
 
   useEffect(() => {

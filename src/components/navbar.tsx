@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { IconInnerShadowTop, IconMovie } from "@tabler/icons-react";
+import {  IconMovie } from "@tabler/icons-react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Workspace } from "../../types";

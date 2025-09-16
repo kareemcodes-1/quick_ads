@@ -29,12 +29,12 @@ export async function GET(
 }
 
 
-async function toBase64FromUrl(url: string) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Failed to fetch image: ${res.status}`);
-  const buf = Buffer.from(await res.arrayBuffer());
-  return `data:image/png;base64,${buf.toString("base64")}`;
-}
+// async function toBase64FromUrl(url: string) {
+//   const res = await fetch(url);
+//   if (!res.ok) throw new Error(`Failed to fetch image: ${res.status}`);
+//   const buf = Buffer.from(await res.arrayBuffer());
+//   return `data:image/png;base64,${buf.toString("base64")}`;
+// }
 
 export async function POST(
   req: NextRequest,

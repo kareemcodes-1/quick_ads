@@ -58,7 +58,7 @@ export const authOptions: AuthOptions = {
       // Initial sign-in
       if (user) {
         token.id = user.id;
-        token.name = (user as any).name;
+        token.name = user.name!;
         token.email = user.email!;
       }
 
@@ -76,7 +76,7 @@ export const authOptions: AuthOptions = {
         session.user = {
           id: token.id as string,
           email: token.email as string,
-          name: (token as any).name,
+          name: token.name! as string,
         };
       }
       return session;

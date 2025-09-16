@@ -32,7 +32,6 @@ function AuthButton() {
 
 export default function Home() {
   const [workspaces, setWorkspaces] = useState<Workspace[]>([]);
-  const router = useRouter();
 
   useEffect(() => {
     async function fetchWorkspaces() {
