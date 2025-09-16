@@ -37,13 +37,13 @@ export async function GET(
 // }
 
 export async function POST(
-  req: NextRequest,
-  { params }: { params: { url: string } }
+  _req: NextRequest,
+  context: { params: Promise<{ url: string }> }
 ) {
   await connectDB();
 
   try {
-    const { description, imageUrl, user } = await req.json();
+    const { description, imageUrl, user } = await _req.json();
     if (!description || !imageUrl || !user) {
       return NextResponse.json(
         { error: "Missing description, image, or user" },
@@ -51,8 +51,10 @@ export async function POST(
       );
     }
 
+    const {url} = await context.params
+
     // Find workspace by URL
-    const workspace = await Workspace.findOne({ url: params.url });
+    const workspace = await Workspace.findOne({ url });
     if (!workspace) {
       return NextResponse.json({ error: "Workspace not found" }, { status: 404 });
     }

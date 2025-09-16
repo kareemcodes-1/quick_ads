@@ -9,13 +9,13 @@ import util from "util";
 const execPromise = util.promisify(exec);
 
 export async function POST(
-  req: NextRequest,
-  { params }: { params: { url: string; id: string } }
+    _req: NextRequest,
+  context: { params: Promise<{ url: string, id: string }> }
 ) {
   await connectDB();
 
   try {
-    const { id: adId } = params;
+    const { id: adId } = await context.params;
 
     // Find the ad
     const ad = await ProductAd.findById(adId);

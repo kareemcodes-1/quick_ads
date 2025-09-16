@@ -5,23 +5,23 @@ import Workspace from "@/models/Workspace";
 import { generateImageWithHF } from "@/lib/generateImageWithHF";
 
 export async function PUT(
-  req: NextRequest,
-  { params }: { params: { url: string; id: string } }
+  _req: NextRequest,
+  context: { params: Promise<{ url: string, id: string }> }
 ) {
   try {
     await connectDB();
-
-    const workspace = await Workspace.findOne({ url: params.url });
+    const {url, id} = await context.params
+    const workspace = await Workspace.findOne({ url });
     if (!workspace) {
       return NextResponse.json({ error: "Workspace not found" }, { status: 404 });
     }
 
-    const body = await req.json();
+    const body = await _req.json();
     const { description, regenerateImage } = body;
 
     // Find the existing ad
     const ad = await ProductAd.findOne({
-      _id: params.id,
+      _id: id,
       workspace: workspace._id,
     });
     if (!ad) {
