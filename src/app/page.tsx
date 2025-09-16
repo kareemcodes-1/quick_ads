@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 import { Navbar } from "@/components/navbar";
 import { Workspace } from "../../types";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 
@@ -54,18 +53,19 @@ export default function Home() {
 
       {/* ===== HERO SECTION ===== */}
       <main className="container mx-auto px-4 py-20 text-center">
-       <div className="inline-flex items-center px-6 py-2 mb-6 text-sm font-semibold text-gray-700 bg-white rounded-full shadow-sm shadow-purple-300 border">
-  🚀 QuickAds is live
-</div>
-
+        <div className="inline-flex items-center px-6 py-2 mb-6 text-sm font-semibold text-gray-700 bg-white rounded-full shadow-sm shadow-purple-300 border">
+          🚀 QuickAds is live
+        </div>
 
         <h1 className="mx-auto max-w-4xl text-5xl font-extrabold leading-tight tracking-tight text-gray-900 md:text-6xl lg:text-7xl">
-          Create Stunning Product Ads in <span className="text-purple-600">Seconds</span>
+          Create Stunning Product Ads in{" "}
+          <span className="text-purple-600">Seconds</span>
         </h1>
 
         <p className="mt-6 max-w-2xl mx-auto text-lg text-gray-700">
-          Upload an image, describe your offer, and let AI instantly design scroll-stopping ads.
-          Boost your reach and turn conversations into conversions — all in one place.
+          Upload an image, describe your offer, and let AI instantly design
+          scroll-stopping ads. Boost your reach and turn conversations into
+          conversions — all in one place.
         </p>
 
         <AuthButton />

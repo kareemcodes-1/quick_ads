@@ -35,7 +35,7 @@ export default function Page() {
       });
 
       if (!res.ok) throw new Error("Failed to generate ad");
-      const data = await res.json();
+      // const data = await res.json();
 
       toast.success("✅ Product image ad generated!");
     } catch (err) {

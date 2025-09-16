@@ -26,6 +26,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import Image from "next/image";
 
 export function SectionCards({ url }: { url: string }) {
   const [loading, setLoading] = useState(true);
@@ -172,9 +173,12 @@ export function SectionCards({ url }: { url: string }) {
             </CardTitle>
           </CardHeader>
           <CardFooter className="flex flex-col gap-3">
-            <img
+            <Image
               src={ad.imageBase64}
               alt={ad.description}
+              quality={100}
+              width={500}
+              height={500}
               className="aspect-video w-full rounded-md object-cover"
             />
             <div className="flex gap-2">
